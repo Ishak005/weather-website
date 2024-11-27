@@ -14,6 +14,7 @@ video {
     height: 100%;
     object-fit: cover;
     z-index: -1;
+    background-color: rgba(7, 6, 6, 0.712) /* Fallback color */
   }
 .weatherForm{
     margin: 20px;
@@ -44,10 +45,13 @@ button[type="submit"]{
     border-radius: 10px;
     background: rgba(10, 10, 165, 0.671);
 }
-button[type="submit"]:hover{
+
+button[type="submit"]:hover {
     background: rgba(10, 10, 165, 0.771);
     border-radius: 10px;
+    transition: background 0.3s ease, border-radius 0.3s ease;
 }
+
 .card{
     background: linear-gradient(180deg,hsl(210, 100%, 75%),hsl(40, 100%, 75%));
     padding: 50px;
@@ -86,8 +90,37 @@ p{
     margin: 0;
     font-size: 7.5rem;
 }
+
 .errorDisplay{
     font-size: 2.5rem;
     font-weight: bold;
     color: hsla(0, 0%, 0, 0.75);
+}
+.input-container{
+    background: rgba(0, 0, 0, 0.329);
+    width: 100%;
+    border-radius: 10px;
+    margin: 10px;
+  
+}
+@media (max-width: 600px) {
+    .card {
+        padding: 20px;
+        min-width: 90%; /* Reduce minimum width */
+    }
+    
+    .cityInput {
+        font-size: 1.5rem; /* Adjust font size */
+        width:60%; /* Reduce width */
+    }
+  
+    h1 {
+        font-size: 2.5rem; /* Scale down heading */
+    }
+    p, .descDisplay, .humidityDisplay, .cityDisplay, .tempDisplay {
+        font-size: 1rem; /* Adjust text size */
+    }
+    .weatherEmoji {
+        font-size: 5rem; /* Scale emoji */
+    }
 }
