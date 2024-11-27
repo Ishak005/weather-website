@@ -83,6 +83,7 @@ function displayWeatherInfo(data) {
             break;
         case "rain":
         case "shower rain":
+        case "light rain":
             videoSrc = "videos/rain.mp4";
             break;
         case "snow":
@@ -100,8 +101,7 @@ function displayWeatherInfo(data) {
 
     if (videoSrc) {
         videoElement.src = videoSrc;
-        videoElement.load(); // Reload the video
-    }
+        videoElement.load(); 
 }
 
 function getWeatherEmoji(weatherId) {
